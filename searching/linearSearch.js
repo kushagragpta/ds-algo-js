@@ -10,11 +10,6 @@ Best Case
 O(1)
 
 Space Complexity
-Worst Case 
-O(1)
-Average Case 
-O(1)
-Best Case
 O(1)
 
 */

@@ -11,23 +11,20 @@ Best Case
 O(1)
 
 Space Complexity
-Worst Case 
-O(1)
-Average Case 
-O(1)
-Best Case
-O(1)
+O(1) in case of non recursive
+O(log n) in case of recursive
+
 
 */
 
 function binarySearch(arr, searchValue, start, end) {
-  if (start > end) return false;
+  if (start > end) return -1;
   let middle = Math.floor((start+end)/ 2);
 
-    if (arr[middle] == searchValue) return true;
+    if (arr[middle] == searchValue) return middle;
     else if (arr[middle] < searchValue) return binarySearch(arr, searchValue, middle+1, end);
     else if (arr[middle] > searchValue) return binarySearch(arr, searchValue, start, middle-1);
 
 }
-
-console.log(binarySearch([1, 2, 3, 4, 5], 4,0,4));
+let arr= [1, 2, 3, 4, 5];
+console.log(binarySearch(arr, 4,0,arr.length-1));
