@@ -10,11 +10,6 @@ Best Case
 O(n)
 
 Space Complexity
-Worst Case 
-O(1)
-Average Case 
-O(1)
-Best Case
 O(1)
 
 */
@@ -29,4 +24,4 @@ function insertionSort(arr) {
   }
   return arr;
 }
-console.log(insertionSort([1, 2, 3, 5, 4]));
+console.log(insertionSort([2, 3, 1, 5, 4]));

@@ -7,25 +7,28 @@ O(n^2)
 Average Case 
 O(n^2)
 Best Case
-O(n)
+O(n) 
+for best case return arr after first pass
 
 Space Complexity
-Worst Case 
-O(1)
-Average Case 
-O(1)
-Best Case
 O(1)
 
 */
 
 function bubbleSort(arr) {
+  let swapped;
   for (let i = 0; i <= arr.length - 1; i++) {
-    for (let j = 0; j <= arr.length-i-1; j++) {
-      if (arr[j] > arr[j+1])
-      {
-       [ arr[j] , arr[j+1]] =  [ arr[j+1] , arr[j]];
+    swapped = false;
+    for (let j = 0; j <= arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swapped = true;
       }
+    }
+    // console.log(arr);
+    if (!swapped) {
+      console.log(i);
+      return arr;
     }
   }
   return arr;

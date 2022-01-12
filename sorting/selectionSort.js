@@ -7,14 +7,9 @@ O(n^2)
 Average Case 
 O(n^2)
 Best Case
-O(n)
+O(n^2)
 
 Space Complexity
-Worst Case 
-O(1)
-Average Case 
-O(1)
-Best Case
 O(1)
 
 */
