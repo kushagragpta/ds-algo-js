@@ -10,7 +10,7 @@ Best Case
 O(n^2)
 
 Space Complexity
-O(1)
+O(n)
 
 */
 
@@ -24,6 +24,7 @@ function merge(arr, l, m, r)
     let R = new Array(n2);
   
     // Copy data to temp arrays L[] and R[]
+    //  c2.n
     for (let i = 0; i < n1; i++)
         L[i] = arr[l + i];
     for (let j = 0; j < n2; j++)
@@ -39,7 +40,7 @@ function merge(arr, l, m, r)
   
     // Initial index of merged subarray
     let k = l;
-  
+  //c3.n
     while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
@@ -76,8 +77,12 @@ function mergeSort(arr,l, r){
     if(l>=r){
         return;//returns recursively
     }
-    let m =l+ parseInt((r-l)/2);
+    let m =l+ parseInt((r-l)/2); 
+  // c1 // 2^32
+
+//  T(n/2) 
     mergeSort(arr,l,m);
+//  T(n/2) 
     mergeSort(arr,m+1,r);
     merge(arr,l,m,r);
     console.log(arr);
@@ -85,4 +90,10 @@ function mergeSort(arr,l, r){
 
 
   mergeSort([1, 2, 3, 5, 4,6],0,5);
-  
+  //   T(n) = c1+T(n/2)+T(n/2)+c2.n+c3.n
+  // T(n)= 2T(n/2)+n(c'')
+  //     = 2[2T(n/4) + n/2(c''))] +n(c'')
+    //     = 4T(n/4) + n.2(c''))
+//       = 4[2T(n/4)+ n/8.c'')] + n.2(c''))
+
+
