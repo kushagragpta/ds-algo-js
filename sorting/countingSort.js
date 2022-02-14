@@ -51,6 +51,7 @@ function countingSort(arr) {
   for (let i = min; i <= max; i++) {
     count[i] = 0;
   }
+  console.log(count);
   for (let i = 0; i < arr.length; i++) {
     count[arr[i]] += 1;
   }
